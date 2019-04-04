@@ -46,8 +46,7 @@ public class Problem2 {
     
     public static void main(String args[]){
         
-        //int[] input = {1,2,3,2,0,5,5,2,8};
-        int[] input = {};
+        int[] input = {1,0,3,2,6,5,5,2,8};
         int[] answer = getAnswer(input);
         
         for (int ans : answer){
