@@ -1,0 +1,8 @@
+////////////////////////////////
+// Java Coding Cheat Sheet
+////////////////////////////////
+
+// Arrays 
+- Declare Array: int[] array = new int[10];
+- Declare and Initalize: int[] array = new int[5]{1,2,3,4,5};
+                         int[] array = {1,2,3,4,5};

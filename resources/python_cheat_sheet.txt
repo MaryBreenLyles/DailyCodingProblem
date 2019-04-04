@@ -1,0 +1,8 @@
+################################
+# Python Coding Cheat Sheet
+################################
+
+# Lists 
+- Declare List: list = [1,2,3] 
+- Add element: list.append()
+- 
