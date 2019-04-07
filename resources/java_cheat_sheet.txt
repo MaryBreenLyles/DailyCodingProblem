@@ -6,3 +6,11 @@
 - Declare Array: int[] array = new int[10];
 - Declare and Initalize: int[] array = new int[5]{1,2,3,4,5};
                          int[] array = {1,2,3,4,5};
+
+//Strings
+- Convert string to char array: string.toCharArray();
+
+//Queue
+- implements a Linked List
+    Looks like:
+        Queue<E> queue = new LinkedList<E>;
