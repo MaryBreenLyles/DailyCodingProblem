@@ -66,7 +66,7 @@ public class Problem3 {
         return queueAns;
     }
 
-    // 2) Turn Queue into Node
+    // 2) Turn Queue into Node (tree)
     public static Node desHelp(Queue<String> queueAns){
         
         String curr = queueAns.remove();
