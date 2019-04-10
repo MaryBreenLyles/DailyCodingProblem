@@ -1,5 +1,6 @@
 import java.util.Queue;
 import java.util.LinkedList;
+import java.lang.Math.*;
 
 public class Problem8 {
     
@@ -16,33 +17,50 @@ public class Problem8 {
         }
     }
     
-    static int count = 0;
     
     // Turns Tree into a string delimited with commas
-    public static boolean isUnival(Node node){
+    public static int isUnival(Node node){
         
-        boolean rIsUnival = false;
-        boolean lIsUnival = false;
+        int countLeftUnival = 0;
+        int countRightUnival = 0;
         
         if (node == null){
-            return true;
+            return 0;
         }        
     
-        lIsUnival = isUnival(node.left);
-        rIsUnival = isUnival(node.right);
+        countLeftUnival = isUnival(node.left);
+        countRightUnival = isUnival(node.right);
         
-        if (rIsUnival && lIsUnival && (node.right == null || node.right.val == node.val) && (node.left == null || node.left.val == node.val)){
-            count++;
-            return true;
+        boolean lIsUnival = (countLeftUnival >= 0);
+        boolean rIsUnival = (countRightUnival >= 0);
+        int totalUniVals = Math.abs(countLeftUnival) + Math.abs(countRightUnival);
+        
+        if (rIsUnival && lIsUnival && (node.right == null || node.right.val == node.val) 
+                                   &&  (node.left == null || node.left.val == node.val)){
+            return totalUniVals+1;
         }
 
-        return false;
+        return totalUniVals;
         
     }
 
 
     // Build a little test guy
-    public static Node makeTestTree(){
+    public static Node makeTestTree1(){
+        
+        return new Node(0,
+            new Node(0, 
+                new Node(0, null, null),
+                new Node(0, null, 
+                    new Node(1, null, null))
+                ),
+            new Node(0, new Node(1, null, null), null)
+        );
+
+    }
+    
+    // Build a little test guy
+    public static Node makeTestTree2(){
         
         return new Node(0,
             new Node(0, 
@@ -50,7 +68,7 @@ public class Problem8 {
                 new Node(0, null, 
                     new Node(0, null, null))
                 ),
-            new Node(0, new Node(1, null, null), null)
+            new Node(0, new Node(0, null, null), null)
         );
 
     }
@@ -59,8 +77,8 @@ public class Problem8 {
     
     public static void main(String args[]) {
      
-        isUnival(makeTestTree());
-        System.out.println(count);
+        System.out.println(isUnival(makeTestTree1()));
+        System.out.println(isUnival(makeTestTree2()));
         
     }
     
