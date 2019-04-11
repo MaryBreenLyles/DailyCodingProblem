@@ -1,5 +1,7 @@
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 public class Problem9_LargestNonAdjSum{
 
@@ -14,34 +16,31 @@ public static ArrayList<Integer> findLargeNonAdj(ArrayList<Integer> listNums){
     ArrayList<Integer> ans = new ArrayList<Integer>();
     ArrayList<Integer> maxPlaceList = new ArrayList<Integer>();
     
-    
+    // FIX
     Object[] listNumsArr = new Integer[0];
     listNumsArr = listNums.toArray(); //listNums array is now Integer array?
     
     while(!listNums.isEmpty()){ //useful to keep as list so can use while loop
-        
+        // FIX
         Integer max = findMax(listNumsArr);
         Integer maxPlace = findMaxPlace(listNumsArr);
-        
+        // FIX
         // If we don't have anything that was next to it already in ans, append
-        if (max>0){
-            if (!maxPlaceList.contains(valueOf(maxPlace.intValue()+1)) 
-                && !maxPlaceList.contains(valueOf(maxPlace.intValue()-1))){
+        if (max>0 && !maxPlaceList.contains(valueOf(maxPlace.intValue() + 1)) && !maxPlaceList.contains(valueOf(maxPlace.intValue() - 1))){
                 
                 ans.add(max);                   // append num to answer list
                 maxPlaceList.add(maxPlace);     // append place of num 
                 
                 listNumsArr[maxPlace.intValue()] = 0;      // get out of the way
                 listNums.remove(indexOf(max));  // remove from original list
-            }else{
-                listNumsArr[maxPlace.intValue()] = 0;      // get out of the way
-                listNums.remove(indexOf(max));  // remove from original list
-            }
+            
         }else{
             listNumsArr[maxPlace.intValue()] = 0;          // get out of the way
             listNums.remove(indexOf(max));      // remove from original list
         }
     }
+  
+  return ans;
 }
 
 // Helper, returns sum of a List
@@ -98,3 +97,4 @@ public static Integer findMaxPlace(Integer A[]){
         
      }
 }
+
