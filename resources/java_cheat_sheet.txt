@@ -14,3 +14,42 @@
 - implements a Linked List
     Looks like:
         Queue<E> queue = new LinkedList<E>;
+
+
+//Store two values (like a tuple)
+- Create pair class that stores two values in the constructor
+- Example: Value/Position Class (problem 8); can store value/position of Array element
+    public static class ValPos {
+        private int val;
+        private int pos;
+        
+        public ValPos(int val, int pos){
+            this.val = val;
+            this.pos = pos;
+        }
+        
+        public int getVal(){
+            return val;
+        }
+        
+        public int getPos(){
+            return pos;
+        }
+    }
+
+
+// HOW TO COMPARE OBJECTS - USE: Compare Inheritance
+- ValPos implements Comparable<ValPos> in order to use compareTo method, so that Arrays.sort 
+  can actually sort an array of type ValPos
+- Returns val inside this class minus other
+      	public int compareTo(ValPos other){
+          
+          return other.getVal() - this.val;
+        /* a negative integer (less than), zero (equal to), or a 
+          positive integer (greater than) as this object is less than, 
+          equal to, or greater than the specified object.
+          (was flipped so Arrays.sort will return in descending order
+           -with the largest # at index 0
+        */
+        
+    	}
