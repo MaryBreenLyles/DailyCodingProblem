@@ -6,7 +6,86 @@
 - Declare List: list = [1,2,3] 
 - Add element: list.append()
 
-#For loops in Python
+# For loops in Python
 - for i, num in enumerate(nums):
 - for num in nums:
 - for i in range(0, 9, 2) = for(int i=0; i<9; i+=2) ... range(startVal, stopVal, modifier)
+
+
+# * key will explode list
+- ex. function(*[1,2,3]) = function(1,2,3)
+
+
+# To search thru String, use char array syntax:
+    ex: word = "hello"
+        print(word[0]) => h (print 0th index char)
+        print(word[:1] => h (print up to the 1th index char, non inclusive)
+        print(word[2:3]) => l
+        Print(word[2:4]) => ll
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# THREE RELATED TOPICS:
+
+- DEFAULT ARGUMENTS** = if user doesn't pass in the parameter for one of the arguments, you can have it use a default value called
+                        a default argument
+        Ex:
+        def greet(name, msg = "Good morning!"):
+            # greets person w/ provided default message, unless user passes in a different String for message
+            print("Hello", name + ', ' + msg)
+        
+        # Will return: Hello, Kate, Good morning!
+        greet("Kate")
+
+        **can't have a non-default arg next to default arg - cant do: def greet(name, msg="Good morning", msg2)
+
+        
+- VARIATIC FUNCTION = 
+
+
+- KEYWORD ARGUMENTS = arguments passed in as = name of variable in method
+    - function(arg1="one", arg2="two") = function(one, two)  for the func: def function(arg1, arg2)
+
+    - Beneficial because it allows you to specify some arguments and leave the ones with default values blank
+        so you don't really have to waste time specifying everything
+
+    - when func is called, you can swap arguments
+        
+        **can't have positional arguments (arguments that computer only understands if they're in the right position) 
+            after keyword arguments
+
+- Pass in multiple args using the * character
+    ex: def greet(*names):
+            for name in names:
+                print("Hello",name)
+
+        greet("Monica", "Steve", ...) # pass in multiple args even though greet only appears to take one arg
+    
+    - * character can allow something to explode array
+        ex:
+            def prog(f, n, args)
+                return f(*args)

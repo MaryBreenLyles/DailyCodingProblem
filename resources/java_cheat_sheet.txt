@@ -41,7 +41,7 @@
 // HOW TO COMPARE OBJECTS - USE: Compare Inheritance
 - ValPos implements Comparable<ValPos> in order to use compareTo method, so that Arrays.sort 
   can actually sort an array of type ValPos
-- Returns val inside this class minus other
+
       	public int compareTo(ValPos other){
           
           return other.getVal() - this.val;

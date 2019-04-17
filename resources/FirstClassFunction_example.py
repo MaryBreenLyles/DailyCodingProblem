@@ -1,3 +1,9 @@
+# If functions are first class then you can:
+# - pass it into another function as a variable
+# - return it from a function
+# - modify it
+# - assign it to a variable
+
 
 def modList(f, listNums):
     return f(listNums)
