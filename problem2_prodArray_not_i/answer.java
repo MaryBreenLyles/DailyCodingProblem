@@ -1,6 +1,4 @@
-#https://www.onlinegdb.com/online_python_compiler
-
-'''
+ /*
 -------------------------------------------------------
  Question
 -------------------------------------------------------
@@ -14,28 +12,43 @@ of the new array is the product of all the numbers in the original array except 
 For example, if our input was [1, 2, 3, 4, 5], the expected output would be 
 [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 
-Follow-up: what if you can't use division?
+Follow-up: what if you can't use division?. 
 
 -------------------------------------------------------
  Algorithm Explanation 
 -------------------------------------------------------
 
-Basic Idea: Get the product of the array. Then, iterate through and divide that product
-by the current value to get the product of all elements except self. Place at index and continue. 
+The idea is to get the product of all the left side values,
+the product of all the right side values,
+and then multipuly them together
 
-'''
+[1, 2, 3, 4] 
 
-def problem2(ints):
-    intsProduct = 1
-    for num in ints:
-        intsProduct *= num
-    answer = []
-    for num in ints:
-        answer.append(int(intsProduct/num))
-    return answer
+[23,12,8,6] - Output
 
-print(problem2([1,2,3,4,5]))
+[1,1,2,6] - Product of Left Side Elts
 
-#Things I did wrong
-#   - I originally forgot to cast to an int, so the array came back as doubles. Java would help with this
-#   - Didnt account for 0s. Fixed this in the Java case.
+[24, 12, 4, 1] - Product of Right Side Elts
+
+[24,12,8,6] - Output
+
+
+*/
+ 
+ public int[] productExceptSelf(int[] nums) {
+    	int n = nums.length;
+    	int[] res = new int[n];
+    	int right=1,left=1;
+        for(int i=0;i<n;i++){
+            res[i]=1;
+        }
+    	for (int i=0;i<n;i++) {
+    		res[i]*=left;
+    		left*=nums[i];
+    	}
+    	for(int i=n-1;i>=0;i--) {
+    		res[i]*=right;
+    		right*=nums[i];
+    	}
+    	return res;
+    }
