@@ -27,7 +27,7 @@ public class Problem3 {
         if (node.left != null){
             seralize(node.left);
         }else {
-            answer += "null" + ",";
+            answer += "null" + ",";// O(S.length) for every call
         }
         
         // recurse to right node or append null
@@ -37,13 +37,8 @@ public class Problem3 {
             answer += "null" + ",";
         }
         
-        // if you reach the end of a branch, return (goes back to do
-        // next child)
-        if (node.left == null && node.right == null){
-            return answer;
-        }
         
-        // return the final string
+        // climbs back up the tree
         return answer;
     }
 

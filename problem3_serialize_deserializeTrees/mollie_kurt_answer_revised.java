@@ -98,7 +98,8 @@ public class Problem3 {
     
     //MAIN METHODS////////////////////
 
-    public static String emptyMarker = "null";
+    public final static String emptyMarker = "null"; // in case we want to change later 
+                                                     // (final means constant)
 
     //Setup for seralization; defines the answer variable and kicks off the recursion 
     public static String seralize(Node node){
