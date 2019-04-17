@@ -25,7 +25,6 @@ by the current value to get the product of all elements execpt self. Place at in
 
 */
 
-
 public class Problem2 {
 
     
@@ -70,7 +69,6 @@ public class Problem2 {
 
         return answer;
     }
-    
     
     public static void main(String args[]){
         
