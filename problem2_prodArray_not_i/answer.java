@@ -32,6 +32,9 @@ and then multipuly them together
 
 [24,12,8,6] - Output
 
+**TAKE AWAY**
+It is super helpful to try to frame the problem in as many ways as you can.
+
 
 */
  

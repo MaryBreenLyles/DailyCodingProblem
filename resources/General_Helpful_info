@@ -1,0 +1,2 @@
+#  MOD (%)
+-   Whenever you need circular counting (e.g. overwriting), use the mod function
