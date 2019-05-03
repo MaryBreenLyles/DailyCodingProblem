@@ -47,16 +47,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 # THREE RELATED TOPICS:
 
 - DEFAULT ARGUMENTS** = if user doesn't pass in the parameter for one of the arguments, you can have it use a default value called
